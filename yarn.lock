@@ -3848,6 +3848,14 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+fix@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npm.taobao.org/fix/download/fix-0.0.6.tgz#07e593a27414ddc486ee52d50f9c8e09885a0305"
+  dependencies:
+    pipe "0.0.2"
+    underscore "1.1.6"
+    underscore.string "1.1.4"
+
 flat-cache@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/flat-cache/download/flat-cache-2.0.1.tgz#5d296d6f04bda44a4630a301413bdbc2ec085ec0"
@@ -6493,6 +6501,10 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
+pipe@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npm.taobao.org/pipe/download/pipe-0.0.2.tgz#a16fe6fc019d75bd987c4928a67e1e50e4f5b44f"
+
 pirates@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npm.taobao.org/pirates/download/pirates-4.0.1.tgz#643a92caf894566f91b2b986d2c66950a8e2fb87"
@@ -8703,6 +8715,16 @@ uglify-js@3.4.x, uglify-js@^3.1.4:
   dependencies:
     commander "~2.17.1"
     source-map "~0.6.1"
+
+underscore.string@1.1.4:
+  version "1.1.4"
+  resolved "https://registry.npm.taobao.org/underscore.string/download/underscore.string-1.1.4.tgz#9be06b23b8e3d996ea2020f9984202069e3dee12"
+  dependencies:
+    underscore "1.1.6"
+
+underscore@1.1.6:
+  version "1.1.6"
+  resolved "https://registry.npm.taobao.org/underscore/download/underscore-1.1.6.tgz#6868da1bdd72d75285be0b4e50f228e70d001a2c"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
