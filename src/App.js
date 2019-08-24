@@ -1,13 +1,20 @@
-import React from 'react';
-import Movies from './components/movies'
-import './App.css';
+import React, { Component } from "react";
+import Counters from "./components/counters";
+import NavBar from "./components/navbar";
+import "./App.css";
 
-function App() {
-  return (
-   <main className="container">
-       <Movies/>
-   </main> 
-  );
+class App extends Component {
+  state = {};
+  render() {
+    return (
+      <React.Fragment>
+        <NavBar />
+        <main className="container">
+          <Counters />
+        </main>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
