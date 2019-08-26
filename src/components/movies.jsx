@@ -15,7 +15,8 @@ class Moives extends Component {
   };
 
   componentDidMount() {
-    this.setState({ movies: getMovies(), genres: getGenres() });
+    const genres = [{ name: "All Genres", _id: "5462843146df43c67" }, ...getGenres()];
+    this.setState({ movies: getMovies(), genres });
   }
   handleDelete = movie => {
     const movies = this.state.movies.filter(m => m._id !== movie._id);
@@ -34,7 +35,7 @@ class Moives extends Component {
   };
 
   handleGenreSelect = genre => {
-    this.setState({ selectedGenre: genre });
+    this.setState({ selectedGenre: genre , currentPage: 1});
   };
 
   render() {
@@ -47,7 +48,7 @@ class Moives extends Component {
     } = this.state;
     if (count === 0) return <p>There is no movies in database!</p>;
 
-    const filtered = selectedGenre
+    const filtered = selectedGenre && selectedGenre._id
       ? allMovies.filter(m => m.genre._id === selectedGenre._id)
       : allMovies;
     const movies = paginate(filtered, currentPage, pageSize);
