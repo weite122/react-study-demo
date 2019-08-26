@@ -15,10 +15,7 @@ class Moives extends Component {
   };
 
   componentDidMount() {
-    const genres = [
-      { name: "All Genres"},
-      ...getGenres()
-    ];
+    const genres = [{ name: "All Genres" }, ...getGenres()];
     this.setState({ movies: getMovies(), genres });
   }
   handleDelete = movie => {
