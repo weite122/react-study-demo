@@ -28,7 +28,6 @@ const Pagination = props => {
   );
 };
 
-// 类型检测
 Pagination.propTypes = {
   itemsCount: PropTypes.number.isRequired,
   pageSize: PropTypes.number.isRequired,
