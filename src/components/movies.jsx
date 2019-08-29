@@ -4,7 +4,7 @@ import ListGroup from "./common/listGroup";
 import { getMovies } from "../services/fakeMovieService";
 import { getGenres } from "../services/fakeGenreService";
 import { paginate } from "../utils/paginate";
-import MoviesTable from "./common/moviesTable";
+import MoviesTable from "./moviesTable";
 import _ from 'lodash'
 
 class Moives extends Component {
