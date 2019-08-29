@@ -7,7 +7,7 @@ import { paginate } from "../utils/paginate";
 import MoviesTable from "./moviesTable";
 import _ from 'lodash'
 
-class Moives extends Component {
+class Movies extends Component {
   state = {
     movies: [],
     genres: [],
@@ -92,4 +92,4 @@ class Moives extends Component {
   }
 }
 
-export default Moives;
+export default Movies;
