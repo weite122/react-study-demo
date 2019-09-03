@@ -1,25 +1,38 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Input from "./common/input";
 
 class LoginForm extends Component {
   state = {
-    account: {
-      username: "",
-      password: ""
-    }
-    //表单创建时state的内容要么是空字符串，或者是从服务器获取的数据
+    account: {username: "", password: ""},
+    errors: {}
   };
+  // 对象获取里面元素errors['username']， 数组 errors.find(e=>e.name==='username')
+
+  validate = () => {
+    const errors = {}
+    const {account} = this.state
+    if (account.username.trim() === '')
+      errors.username = "Username is required."
+    if (account.password.trim() === '')
+      errors.password = "Password is required."
+    return Object.keys(errors).length === 0 ? null : errors
+  }
+
   handleSubmit = e => {
     e.preventDefault();
+    const errors = this.validate();
+    console.log(errors)
+    this.setState({errors});
+    if (errors) return
   };
-  handleChange = ({ currentTarget: input }) => {
-    const account = { ...this.state.account };
+  handleChange = ({currentTarget: input}) => {
+    const account = {...this.state.account};
     account[input.name] = input.value;
-    this.setState({ account });
+    this.setState({account});
   };
 
   render() {
-    const { account } = this.state;
+    const {account} = this.state;
 
     return (
       <div>
