@@ -31,10 +31,16 @@ class App extends Component {
   };
 
   handleDelete = async post => {
-    await axios.delete(apiEndpoint + '/' + post.id)
-
+    const OriginalPosts = this.state.posts
     const posts = this.state.posts.filter(m => m.id !== post.id)
     this.setState({posts})
+    try {
+      await axios.delete(apiEndpoint + '/' + post.id)
+    } catch (e) {
+      alert("服务器挂了")
+      this.setState({posts: OriginalPosts})
+    }
+
   };
 
   render() {
