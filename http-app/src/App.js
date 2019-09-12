@@ -2,6 +2,15 @@ import React, {Component} from "react";
 import axios from "axios";
 import "./App.css";
 
+axios.interceptors.response.use(null, error => {
+  const expectedError = error.response && error.response.status >= 400 && error.response.status < 500
+  if (!expectedError) {
+    console.log("Logging the error", error)
+    alert("出现不可预估的错误")
+  }
+  return Promise.reject(error)
+})
+
 const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 
 class App extends Component {
@@ -37,17 +46,8 @@ class App extends Component {
     try {
       await axios.delete(apiEndpoint + '/' + post.id)
     } catch (ex) {
-      //  Expected (404: not found, 400: bad request) -CLIENT ERRORS
-      //  - Display a specific error message 400: 帖子已删除 404： 格式错误，需要什么格式帖子
-      // Unexpected(network down, server down, do down, bug)
-      // - Log them
-      // - Display a generic and friendly error message
-      if(ex.response && ex.response.status === 404)
-      alert("这个帖子已删除")
-      else{
-        console.log("Logging the error", ex)
-        alert("出现不可预估的错误")
-      }
+      if (ex.response && ex.response.status === 404)
+        alert("这个帖子已删除")
       this.setState({posts: OriginalPosts})
     }
 
