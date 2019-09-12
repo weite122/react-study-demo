@@ -36,8 +36,18 @@ class App extends Component {
     this.setState({posts})
     try {
       await axios.delete(apiEndpoint + '/' + post.id)
-    } catch (e) {
-      alert("服务器挂了")
+    } catch (ex) {
+      //  Expected (404: not found, 400: bad request) -CLIENT ERRORS
+      //  - Display a specific error message 400: 帖子已删除 404： 格式错误，需要什么格式帖子
+      // Unexpected(network down, server down, do down, bug)
+      // - Log them
+      // - Display a generic and friendly error message
+      if(ex.response && ex.response.status === 404)
+      alert("这个帖子已删除")
+      else{
+        console.log("Logging the error", ex)
+        alert("出现不可预估的错误")
+      }
       this.setState({posts: OriginalPosts})
     }
 
