@@ -6962,6 +6962,10 @@ range-parser@^1.2.1, range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://registry.npm.taobao.org/range-parser/download/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
 
+raven-js@^3.27.2:
+  version "3.27.2"
+  resolved "https://registry.npm.taobao.org/raven-js/download/raven-js-3.27.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fraven-js%2Fdownload%2Fraven-js-3.27.2.tgz#6c33df952026cd73820aa999122b7b7737a66775"
+
 raw-body@2.4.0:
   version "2.4.0"
   resolved "https://registry.npm.taobao.org/raw-body/download/raw-body-2.4.0.tgz#a1ce6fb9c9bc356ca52e89256ab59059e13d0332"

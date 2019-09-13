@@ -37,7 +37,7 @@ class App extends Component {
     const posts = this.state.posts.filter(m => m.id !== post.id)
     this.setState({posts})
     try {
-      await http.delete('s' +config.apiEndpoint+ '/' + post.id)
+      await http.delete(config.apiEndpoint+ '/' + post.id)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         alert("这个帖子已删除")
